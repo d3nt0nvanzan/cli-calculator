@@ -1,15 +1,20 @@
+#import sys library
+import sys
 #let user know that they need Python 3 to run program
 print('Before continuing you must have Python 3 to run this program')
 #Asks users to select from the list to decide which program they would like to run
 print('Please select which type of math problem you would like to run')
-print('[1] Addition\n[2] Subtraction\n[3] Division\n[4] Multiplication\n[5] Power of X')
+print('[1] Addition\n[2] Subtraction\n[3] Division\n[4] Multiplication\n[5] Power of X\n[0] Exit Program')
 
 #Takes the input from the user from the list provided
 math = int(input('Enter number for the type of Math problem please: '))
+#Checks if they select 0 and tells them goodbye and exits program
+if math == 0:
+    print('Goodbye!')
+    sys.exit()
 firstNumber = int(input('Enter first number: '))
 secondNumber = int(input('Enter second number (if you selected 5 this will be the exponent): '))
 
-#If they choose addition
 if math == 1:
     answer = firstNumber + secondNumber #Adding both numbers
 elif math == 2:
