@@ -1,5 +1,8 @@
-1. Ensure you have Python3 installed. You can download it here: https://www.python.org/downloads/
-   
+<!-- TODO: here the language is Markdown, not HTML. Be sure to stick to it (no <br>, etc) -->
+<!-- FIXME: download this VSCode Extension: DavidAnson.vscode-markdownlint -->
+<!-- FIXME: to easily look at my comments, download this VSCode Extension  Gruntfuggly.todo-tree -->
+1. Ensure you have Python3 installed. You can download it here: <https://www.python.org/downloads/>
+
 2. Run the program in the terminal using Python3: python3 calculator.py
 
 3. Follow the on-screen prompts to select the type of math problem you would like to solve.
@@ -15,13 +18,16 @@ HOW IT WORKS
    [5] Power of X<br>
    [0] Exit Program<br>
 <br>
+
 [+] Enter the number corresponding to your choice<br>
 [+] If you choose '0' the program will exit<br>
 [+] If you choose any number other than the choices provided the program will exit<br>
 [+] If you choose a valid option (1-5), you will be prompted to enter two numbers<br>
-  - For the 'Power of X' the second number will be the exponent<br>
+
+- For the 'Power of X' the second number will be the exponent<br>
 The program will then display the result of the selected operation<br>
 <br>
+
 EXAMPLE<br>
 <br>
 Please select which type of math problem you would like to run:<br>
