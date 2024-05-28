@@ -1,6 +1,9 @@
-# TODO: need to work again on point 4 of the "requirements.md" file. You've to list all of the operations done in the session. 
-# BUG: always checks the user input. If I enter 'abc' it crashes
-#import sys library
+# BUG: always checks the user input. If I enter 'abc' it crashes. You correctly managed the operation selection but you missed the operands sanity checks.
+# BUG: divide by 0 is not allowed.
+# FIXME: everytime that you've done an operation, presents the user with the menu otherwise he doesn't know what operations to do
+# FIXME: set a maximum value on number that you can manage. This choice is up to you as long as you've done proper researches.
+# TODO: in case the application crashes I'd like to get the operations done so far (also the wrong one)
+# [Q]: look better at how you can import stuff from other file with the Python mechanism
 import sys
 from checkInput import (checker, mathAnswer, equate) #imports checker function from checkInput.py
 print('Welcome to the cli-calculator!')
