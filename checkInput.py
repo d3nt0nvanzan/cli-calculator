@@ -1,8 +1,10 @@
 import sys
 
+# FIXME: improve this name
 def checker():    
     while True:
         try:
+            # BUG: handle the negative numbers
             math = int(input('Enter number for the type of Math problem please: '))
             if math > 5:
                 print('Sorry, that is not a selection')
@@ -14,6 +16,8 @@ def checker():
         
 
 def mathAnswer(math, firstNumber, secondNumber):
+    # FIXME: look something called Enum that are a defined range of values with underlying int value.
+    # https://docs.python.org/3/library/enum.html#module-enum
     if math == 1:
         answer = firstNumber + secondNumber #Adding both number
     elif math == 2:
@@ -27,6 +31,9 @@ def mathAnswer(math, firstNumber, secondNumber):
     return answer
 
 def equate(math):
+    # FIXME: stick to a switch case, it's prettier
+    # FIXME: you could also use a map[key]value
+    # FIXME: in other languages is called dictionary (C#) or maps (Go) or dynamic arrays (PHP)
     if math == 1:
         equation = 'plus'
     elif math == 2:
