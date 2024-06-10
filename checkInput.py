@@ -1,47 +1,58 @@
-import sys
+from enum import Enum
 
 # FIXME: improve this name
-def checker():    
+def selectionCheck():    
     while True:
         try:
             # BUG: handle the negative numbers
             math = int(input('Enter number for the type of Math problem please: '))
-            if math > 5:
-                print('Sorry, that is not a selection')
-            elif math <= 5:
+
+            if math < 0 or math > 5:
+                print('Sorry, this is not a selection')
+            else:
                 return math
-                
         except ValueError:
-            print('Not an integer')
+            print('Invalid input. Please enter an integer.')
+        
         
 
 def mathAnswer(math, firstNumber, secondNumber):
+    class MathOperation(Enum):
+        ADD = 1
+        SUBTRACT = 2
+        DIVIDE = 3
+        MULTIPLY = 4
+        EXPONENTIATE = 5
+
+
     # FIXME: look something called Enum that are a defined range of values with underlying int value.
     # https://docs.python.org/3/library/enum.html#module-enum
-    if math == 1:
-        answer = firstNumber + secondNumber #Adding both number
-    elif math == 2:
-        answer = firstNumber - secondNumber #Subtracting both numbers
-    elif math == 3:
-        answer = firstNumber / secondNumber #Dividing both Numbers3
-    elif math == 4:
-        answer = firstNumber * secondNumber #Multiplying both Numbers
-    elif math == 5:
-        answer = firstNumber ** secondNumber #Raising to the power of X
-    return answer
+    math_operation = MathOperation(math)
+    
+    if math_operation == MathOperation.ADD:
+        answer = firstNumber + secondNumber 
+    elif math_operation == MathOperation.SUBTRACT:
+        answer = firstNumber - secondNumber 
+    elif math_operation == MathOperation.DIVIDE:
+        if secondNumber == 0:
+            raise ZeroDivisionError("Cannot divide by zero")
+        answer = firstNumber / secondNumber 
+    elif math_operation == MathOperation.MULTIPLY:
+        answer = firstNumber * secondNumber
+    elif math_operation == MathOperation.EXPONENTIATE:
+        answer = firstNumber ** secondNumber 
+    return answer  
+            
 
 def equate(math):
     # FIXME: stick to a switch case, it's prettier
     # FIXME: you could also use a map[key]value
     # FIXME: in other languages is called dictionary (C#) or maps (Go) or dynamic arrays (PHP)
-    if math == 1:
-        equation = 'plus'
-    elif math == 2:
-        equation = 'minus'
-    elif math == 3:
-        equation = 'divided by'
-    elif math == 4:
-        equation = 'times'
-    elif math == 5:
-        equation = 'to the power of'
-    return equation
+    math_operations = {
+        1: 'plus',
+        2: 'minus',
+        3: 'divided by',
+        4: 'times',
+        5: 'to the power of'
+    }
+    return math_operations.get(math, 'Invalid operation')
