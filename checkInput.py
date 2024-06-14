@@ -1,14 +1,15 @@
+# FIXME: evaluate if we can separate functions over multiple files.
+# FIXME: get rid of magic strings around your code
+
 from enum import Enum
 
-# FIXME: improve this name
-def selectionCheck():    
+def getOperationSelected():
     while True:
         try:
-            # BUG: handle the negative numbers
             math = int(input('Enter number for the type of Math problem please: '))
 
             if math < 0 or math > 5:
-                print('Sorry, this is not a selection')
+                print('Sorry, this is not a selection (please type something between 0 and 5)')
             else:
                 return math
         except ValueError:
@@ -18,6 +19,7 @@ def selectionCheck():
 
 def mathAnswer(math, firstNumber, secondNumber):
     class MathOperation(Enum):
+        # BUG: start from zero
         ADD = 1
         SUBTRACT = 2
         DIVIDE = 3
@@ -25,10 +27,9 @@ def mathAnswer(math, firstNumber, secondNumber):
         EXPONENTIATE = 5
 
 
-    # FIXME: look something called Enum that are a defined range of values with underlying int value.
-    # https://docs.python.org/3/library/enum.html#module-enum
     math_operation = MathOperation(math)
     
+    # FIXME: change the branches with returns. Use the switch construct
     if math_operation == MathOperation.ADD:
         answer = firstNumber + secondNumber 
     elif math_operation == MathOperation.SUBTRACT:
@@ -45,9 +46,6 @@ def mathAnswer(math, firstNumber, secondNumber):
             
 
 def equate(math):
-    # FIXME: stick to a switch case, it's prettier
-    # FIXME: you could also use a map[key]value
-    # FIXME: in other languages is called dictionary (C#) or maps (Go) or dynamic arrays (PHP)
     math_operations = {
         1: 'plus',
         2: 'minus',
