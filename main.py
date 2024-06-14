@@ -1,11 +1,12 @@
 # BUG: always checks the user input. If I enter 'abc' it crashes. You correctly managed the operation selection but you missed the operands sanity checks.
-# BUG: divide by 0 is not allowed.
-# FIXME: everytime that you've done an operation, presents the user with the menu otherwise he doesn't know what operations to do
-# FIXME: set a maximum value on number that you can manage. This choice is up to you as long as you've done proper researches.
-# TODO: in case the application crashes I'd like to get the operations done so far (also the wrong one)
+# BUG: divide by 0 is not allowed. Keep asking for the second number until is not zero.
+# HACK: make the terminal looks prettier. Colorize stuff, add line breaks. Errors could be colored in red, etc.
+# HACK: listen for cancellation signal. So when a user presses Ctrl + C (which is interrupt signal) don't present a stack trace. Listen for it and handle it gracefully. 
+# FIXME: set a maximum value on number that you can manage. This choice is up to you as long as you've done proper researches. Please tell what is the maximum number we can manage
+# TODO: in case the application crashes I'd like to get the operations done so far (also the wrong one). Also show the operation that raised the error.
 # [Q]: look better at how you can import stuff from other file with the Python mechanism
 import sys
-from checkInput import selectionCheck, mathAnswer, equate #imports checker function from checkInput.py
+from checkInput import getOperationSelected, mathAnswer, equate #imports checker function from checkInput.py
 
 MAX_VALUE = 10**6
 
@@ -20,7 +21,7 @@ try:
         print('Please select which type of math problem you would like to run')
         print('[1] Addition\n[2] Subtraction\n[3] Division\n[4] Multiplication\n[5] Power of X\n[0] Exit Program')
 
-        math = selectionCheck() #assigns the result of the checker() from checkInput.py to the math variable
+        math = getOperationSelected() #assigns the result of the checker() from checkInput.py to the math variable
         if math == 0:
             print('Goodbye!')
             print('Operations performed: ')
