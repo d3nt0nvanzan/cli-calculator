@@ -1,9 +1,9 @@
-# BUG: always checks the user input. If I enter 'abc' it crashes. You correctly managed the operation selection but you missed the operands sanity checks.
-# BUG: divide by 0 is not allowed. Keep asking for the second number until is not zero.
+# BUG: always checks the user input. If I enter 'abc' it crashes. You correctly managed the operation selection but you missed the operands sanity checks. When I messed with operands, you should keep selection and not ask again what operation would you like to perform.
+# BUG: divide by 0 is not allowed. Keep asking for the second number until is not zero. Same problem as the previous problem.
+# FIXME: when I exit by typing 0 as the menu selection, I need to see ONLY the successful operations (not the errors from unsuccessful ones)
 # HACK: make the terminal looks prettier. Colorize stuff, add line breaks. Errors could be colored in red, etc.
 # HACK: listen for cancellation signal. So when a user presses Ctrl + C (which is interrupt signal) don't present a stack trace. Listen for it and handle it gracefully. 
 # FIXME: set a maximum value on number that you can manage. This choice is up to you as long as you've done proper researches. Please tell what is the maximum number we can manage
-# TODO: in case the application crashes I'd like to get the operations done so far (also the wrong one). Also show the operation that raised the error.
 # [Q]: look better at how you can import stuff from other file with the Python mechanism
 import sys
 from checkInput import getOperationSelected, mathAnswer, equate #imports checker function from checkInput.py
