@@ -2,6 +2,15 @@
 # FIXME: get rid of magic strings around your code
 
 from enum import Enum
+from decimal import Decimal, getcontext, Overflow
+
+getcontext().prec = 10000
+
+INVALID_SELECTION_MSG = 'Sorry, this is not a selection (please type something between 0 and 5)'
+INVALID_INPUT_MSG = 'Invalid input. Please enter an integer.'
+ZERO_DIVISION_ERROR_MSG = "Cannot divide by zero"
+INVALID_NUMBER_MSG = 'Not a number. Please enter a number.'
+NUMBER_TOO_LARGE_MSG = "Number is too large."
 
 def getOperationSelected():
     while True:
@@ -9,11 +18,11 @@ def getOperationSelected():
             math = int(input('Enter number for the type of Math problem please: '))
 
             if math < 0 or math > 5:
-                print('Sorry, this is not a selection (please type something between 0 and 5)')
+                print(INVALID_SELECTION_MSG)
             else:
                 return math
         except ValueError:
-            print('Invalid input. Please enter an integer.')
+            print(INVALID_INPUT_MSG)
         
         
 
@@ -36,7 +45,7 @@ def mathAnswer(math, firstNumber, secondNumber):
         answer = firstNumber - secondNumber 
     elif math_operation == MathOperation.DIVIDE:
         if secondNumber == 0:
-            raise ZeroDivisionError("Cannot divide by zero")
+            raise ZeroDivisionError(ZERO_DIVISION_ERROR_MSG)
         answer = firstNumber / secondNumber 
     elif math_operation == MathOperation.MULTIPLY:
         answer = firstNumber * secondNumber
