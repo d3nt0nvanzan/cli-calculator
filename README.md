@@ -1,7 +1,7 @@
 # Cli Calculator
 
-<!-- TODO: download this VSCode Extension: DavidAnson.vscode-markdownlint -->
-<!-- TODO: to easily look at my comments, download this VSCode Extension  Gruntfuggly.todo-tree -->
+<!-- TODO: please stick to the Markdown syntax when you write .md files. -->
+
 1. Ensure you have Python3 installed. You can download it here: <https://www.python.org/downloads/>
 
 2. Run the program in the terminal using Python3: python3 calculator.py
