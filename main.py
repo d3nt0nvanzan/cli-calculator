@@ -3,7 +3,10 @@
 import sys
 import colorama
 from colorama import Fore, Back, Style
-from checkInput import getOperationSelected, mathAnswer, equate, INVALID_NUMBER_MSG, NUMBER_TOO_LARGE_MSG, ZERO_DIVISION_ERROR_MSG
+from getOperation import getOperationSelected
+from messageAlerts import INVALID_NUMBER_MSG, NUMBER_TOO_LARGE_MSG, ZERO_DIVISION_ERROR_MSG
+from mathAnswer import mathAnswer
+from equate import equate
 from decimal import Decimal, getcontext, Overflow
 
 colorama.init(autoreset=True)

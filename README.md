@@ -10,7 +10,7 @@
 ---
 ## HOW IT WORKS
 
-When you run the program, it will display a menu with the following options:  
+When you run the program, it will display a menu with the following options:
    Please select the type of math problem you would like to run:  
    [1] Addition  
    [2] Subtraction  
@@ -28,17 +28,17 @@ The program will then display the result of the selected operation
 ---
 ## Example
 
-Please select which type of math problem you would like to run:  
-[1] Addition  
-[2] Subtraction  
-[3] Division  
-[4] Multiplication  
-[5] Power of X  
-[0] Exit Program  
-Enter number for the type of Math problem please: 1  
-You selected ADDITION  
-Enter first number: 5  
-You entered: 5  
-Enter second number (if you selected 5 this will be the exponent): 3  
-You entered: 3  
-5 plus 3 equals 8  
+Please select which type of math problem you would like to run:
+[1] Addition
+[2] Subtraction
+[3] Division
+[4] Multiplication
+[5] Power of X
+[0] Exit Program
+Enter number for the type of Math problem please: 1
+You selected ADDITION
+Enter first number: 5
+You entered: 5
+Enter second number (if you selected 5 this will be the exponent): 3
+You entered: 3
+5 plus 3 equals 8
