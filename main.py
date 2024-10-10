@@ -7,6 +7,7 @@ from getOperation import getOperationSelected
 from messageAlerts import INVALID_NUMBER_MSG, NUMBER_TOO_LARGE_MSG, ZERO_DIVISION_ERROR_MSG
 from mathAnswer import mathAnswer
 from equate import equate
+from logo import logo
 from decimal import Decimal, getcontext, Overflow
 
 colorama.init(autoreset=True)
@@ -14,7 +15,7 @@ colorama.init(autoreset=True)
 MAX_VALUE = 10**5
 
 getcontext().prec = 10000
-
+print(logo)
 print('Welcome to the cli-calculator!')
 
 #Asks users to select from the list to decide which program they would like to run
