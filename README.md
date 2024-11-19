@@ -2,12 +2,12 @@
 
 <!-- TODO: please stick to the Markdown syntax when you write .md files. -->
 
+## How to Run it
+
 1. Ensure you have Python3 installed. You can download it here: <https://www.python.org/downloads/>
+1. Run the program in the terminal using Python3: `python3 calculator.py`
+1. Follow the on-screen prompts to select the type of math problem you would like to solve.
 
-2. Run the program in the terminal using Python3: python3 calculator.py
-
-3. Follow the on-screen prompts to select the type of math problem you would like to solve.
----
 ## HOW IT WORKS
 
 When you run the program, it will display a menu with the following options:
