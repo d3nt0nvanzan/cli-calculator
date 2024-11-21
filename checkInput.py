@@ -1,4 +1,4 @@
-# FIXME: evaluate if we can separate functions over multiple files.
+# TODO: this file must be deleted.
 # FIXME: this file is called "checkInput" but it does more than that. Try to split further the content of this file.
 # FIXME: get rid of magic strings around your code
 
