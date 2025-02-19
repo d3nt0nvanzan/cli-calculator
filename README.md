@@ -42,3 +42,17 @@ You entered: 5
 Enter second number (if you selected 5 this will be the exponent): 3
 You entered: 3
 5 plus 3 equals 8
+
+
+## How to Test the Program
+
+If you'd like to test the functionality of the program, you can use the `test_math.py` file included in this repository.
+
+1. **Ensure the Test File is in the Same Directory**: Make sure the `test_math.py` file is in the same directory as the other program files.
+
+2. **Run the Tests**:
+   - Open a terminal and navigate to the directory containing the program and `test_math.py`.
+   - Run the tests using the following command:
+
+   ```bash
+   python3 -m unittest test_math.py
