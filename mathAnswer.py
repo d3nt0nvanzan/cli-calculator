@@ -1,29 +1,42 @@
-from enum import Enum
-from decimal import Decimal, getcontext, Overflow
+from messageAlerts import ZERO_DIVISION_ERROR_MSG, INVALID_NUMBER_MSG
 
-def mathAnswer(math, firstNumber, secondNumber):
-    class MathOperation(Enum):
-        # BUG: start from zero
-        ADD = 1
-        SUBTRACT = 2
-        DIVIDE = 3
-        MULTIPLY = 4
-        EXPONENTIATE = 5
+# Class to represent math operations
+class MathOperation:
+    ADD = "+"
+    SUBTRACT = "-"
+    DIVIDE = "/"
+    MULTIPLY = "*"
+    EXPONENTIATE = "^"
 
-
-    math_operation = MathOperation(math)
-    
+# Function to perform the selected math operation
+def calculate(math_operation, firstNumber, secondNumber):
+    match math_operation:
+        case MathOperation.ADD:
+            return firstNumber + secondNumber
+        case MathOperation.SUBTRACT:
+            return firstNumber - secondNumber
+        case MathOperation.MULTIPLY:
+            return firstNumber * secondNumber
+        case MathOperation.DIVIDE:
+            if secondNumber == 0:
+                raise ZeroDivisionError(ZERO_DIVISION_ERROR_MSG)
+            return firstNumber / secondNumber
+        case MathOperation.EXPONENTIATE:
+            return firstNumber ** secondNumber
+        case _:
+            raise ValueError(INVALID_NUMBER_MSG)
+        
     # FIXME: change the branches with returns. Use the switch construct
-    if math_operation == MathOperation.ADD:
-        answer = firstNumber + secondNumber 
-    elif math_operation == MathOperation.SUBTRACT:
-        answer = firstNumber - secondNumber 
-    elif math_operation == MathOperation.DIVIDE:
-        if secondNumber == 0:
-            raise ZeroDivisionError(ZERO_DIVISION_ERROR_MSG)
-        answer = firstNumber / secondNumber 
-    elif math_operation == MathOperation.MULTIPLY:
-        answer = firstNumber * secondNumber
-    elif math_operation == MathOperation.EXPONENTIATE:
-        answer = firstNumber ** secondNumber 
-    return answer 
+    # if math_operation == MathOperation.ADD:
+    #     answer = firstNumber + secondNumber 
+    # elif math_operation == MathOperation.SUBTRACT:
+    #     answer = firstNumber - secondNumber 
+    # elif math_operation == MathOperation.DIVIDE:
+    #     if secondNumber == 0:
+    #         raise ZeroDivisionError(ZERO_DIVISION_ERROR_MSG)
+    #     answer = firstNumber / secondNumber 
+    # elif math_operation == MathOperation.MULTIPLY:
+    #     answer = firstNumber * secondNumber
+    # elif math_operation == MathOperation.EXPONENTIATE:
+    #     answer = firstNumber ** secondNumber 
+    # return answer 
