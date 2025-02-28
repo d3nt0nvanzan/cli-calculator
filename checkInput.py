@@ -1,8 +1,7 @@
 # TODO: this file must be deleted.
 # FIXME: this file is called "checkInput" but it does more than that. Try to split further the content of this file.
-# FIXME: get rid of magic strings around your code
 
-# FIXME: some imports are marked as unused to me.
+# FIXME: some imports are marked as unused to me. Not addressed.
 from enum import Enum
 from decimal import Decimal, getcontext, Overflow
 
@@ -19,7 +18,7 @@ def getOperationSelected():
         try:
             math = int(input('Enter number for the type of Math problem please: '))
 
-            # FIXME: you're still using numbers (magic numbers) here.
+            # FIXME: you're still using numbers (magic numbers) here. Not addressed. "0" and "5" are still magic numbers.
             if math < 0 or math > 5:
                 print(INVALID_SELECTION_MSG)
             else:
@@ -31,7 +30,7 @@ def getOperationSelected():
 
 def mathAnswer(math, firstNumber, secondNumber):
     class MathOperation(Enum):
-        # BUG: start from zero
+        # BUG: start from zero. Not addressed
         ADD = 1
         SUBTRACT = 2
         DIVIDE = 3
@@ -41,7 +40,8 @@ def mathAnswer(math, firstNumber, secondNumber):
 
     math_operation = MathOperation(math)
     
-    # FIXME: change the branches with returns. Use the switch construct
+    # FIXME: change the branches with returns. Use the switch construct. Not addressed.
+    # something like mathAnswer.py:13
     if math_operation == MathOperation.ADD:
         answer = firstNumber + secondNumber 
     elif math_operation == MathOperation.SUBTRACT:

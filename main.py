@@ -1,5 +1,4 @@
-# BUG: always checks the user input. If I enter 'abc' it crashes. You correctly managed the operation selection but you missed the operands sanity checks. When I messed with operands, you should keep selection and not ask again what operation would you like to perform. - Not addressed. To repro it: select Addition, then input "c" as first operand.
-# [Q]: look better at how you can import stuff from other file with the Python mechanism - Not addressed synce Style is not used here. On my IDE is grayed out.
+# BUG: always checks the user input. If I enter 'abc' it crashes. You correctly managed the operation selection but you missed the operands sanity checks. When I messed with operands, you should keep selection and not ask again what operation would you like to perform. - Not addressed. To repro it: select Addition, then input "c" as first operand. Not addressed.
 import sys
 import colorama
 from colorama import Fore, Back
