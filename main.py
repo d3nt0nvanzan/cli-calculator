@@ -20,7 +20,10 @@ print('Welcome to the cli-calculator!')
 operations = []  # To track performed operations
 
 try:
+<<<<<<< HEAD
     
+=======
+>>>>>>> f5ae3c8a18b6323e982b665c4c3b517b9f6ef0ee
     while True:
         print(Fore.WHITE + Back.CYAN + 'Please select which type of math problem you would like to run')
         print(Fore.GREEN + Back.WHITE + '[+] Addition\n[-] Subtraction\n[/] Division\n[*] Multiplication\n[^] Power of X\n[0] Exit Program')
@@ -35,6 +38,7 @@ try:
 
         while True:
             try:
+<<<<<<< HEAD
                 user_input = input('Enter first number (MAX Number is 100000): ')
                 if any(c.isalpha() for c in user_input):  # Check for alphabetic characters
                     print(Back.RED + INVALID_NUMBER_MSG)
@@ -55,15 +59,35 @@ try:
                     print(Back.RED + INVALID_NUMBER_MSG)
                     continue
                 secondNumber = Decimal(user_input)
+=======
+                firstNumber = Decimal(input('Enter first number (MAX Number is 100000): '))
+                if abs(firstNumber) > MAX_VALUE:
+                    print(Back.RED + NUMBER_TOO_LARGE_MSG)
+                else:
+                    break
+            except ValueError:
+                print(Back.RED + INVALID_NUMBER_MSG)
+
+        while True:
+            try:
+                secondNumber = Decimal(input('Enter second number (MAX Number is 100000): '))
+>>>>>>> f5ae3c8a18b6323e982b665c4c3b517b9f6ef0ee
                 if abs(secondNumber) > MAX_VALUE:
                     print(Back.RED + NUMBER_TOO_LARGE_MSG)
                 elif math == MathOperation.DIVIDE and secondNumber == 0:
                     print(Back.RED + ZERO_DIVISION_ERROR_MSG)
+<<<<<<< HEAD
                     continue
                 break
             except ValueError:
                 print(Back.RED + INVALID_NUMBER_MSG)
                 continue
+=======
+                else:
+                    break
+            except ValueError:
+                print(Back.RED + INVALID_NUMBER_MSG)
+>>>>>>> f5ae3c8a18b6323e982b665c4c3b517b9f6ef0ee
 
         try:
             answer = calculate(math, firstNumber, secondNumber)
