@@ -20,6 +20,7 @@ print('Welcome to the cli-calculator!')
 operations = []  # To track performed operations
 
 try:
+    
     while True:
         print(Fore.WHITE + Back.CYAN + 'Please select which type of math problem you would like to run')
         print(Fore.GREEN + Back.WHITE + '[+] Addition\n[-] Subtraction\n[/] Division\n[*] Multiplication\n[^] Power of X\n[0] Exit Program')
@@ -34,25 +35,35 @@ try:
 
         while True:
             try:
-                firstNumber = Decimal(input('Enter first number (MAX Number is 100000): '))
+                user_input = input('Enter first number (MAX Number is 100000): ')
+                if any(c.isalpha() for c in user_input):  # Check for alphabetic characters
+                    print(Back.RED + INVALID_NUMBER_MSG)
+                    continue
+                firstNumber = Decimal(user_input)  # Convert only after alpha check
                 if abs(firstNumber) > MAX_VALUE:
                     print(Back.RED + NUMBER_TOO_LARGE_MSG)
-                else:
-                    break
+                    continue
+                break  # Valid input, exit loop
             except ValueError:
                 print(Back.RED + INVALID_NUMBER_MSG)
+                continue
 
         while True:
             try:
-                secondNumber = Decimal(input('Enter second number (MAX Number is 100000): '))
+                user_input = input('Enter second number (MAX Number is 100000): ')
+                if any(c.isalpha() for c in user_input):
+                    print(Back.RED + INVALID_NUMBER_MSG)
+                    continue
+                secondNumber = Decimal(user_input)
                 if abs(secondNumber) > MAX_VALUE:
                     print(Back.RED + NUMBER_TOO_LARGE_MSG)
                 elif math == MathOperation.DIVIDE and secondNumber == 0:
                     print(Back.RED + ZERO_DIVISION_ERROR_MSG)
-                else:
-                    break
+                    continue
+                break
             except ValueError:
                 print(Back.RED + INVALID_NUMBER_MSG)
+                continue
 
         try:
             answer = calculate(math, firstNumber, secondNumber)
