@@ -1,7 +1,5 @@
 # Cli Calculator
 
-<!-- TODO: please stick to the Markdown syntax when you write .md files. Not addressed -->
-
 ## How to Run it
 
 1. Ensure you have Python3 installed. You can download it here: <https://www.python.org/downloads/>
@@ -58,6 +56,7 @@ If you'd like to test the functionality of the program, you can use the `test_ma
 
    ```bash
    python3 -m unittest test_math.py
+   ```
 
 <!-- TODO work on this section -->
 1. The outcome of the tests is:
