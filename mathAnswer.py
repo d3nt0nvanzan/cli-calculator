@@ -25,18 +25,3 @@ def calculate(math_operation, firstNumber, secondNumber):
             return firstNumber ** secondNumber
         case _:
             raise ValueError(INVALID_NUMBER_MSG)
-        
-    # FIXME: change the branches with returns. Use the switch construct
-    # if math_operation == MathOperation.ADD:
-    #     answer = firstNumber + secondNumber 
-    # elif math_operation == MathOperation.SUBTRACT:
-    #     answer = firstNumber - secondNumber 
-    # elif math_operation == MathOperation.DIVIDE:
-    #     if secondNumber == 0:
-    #         raise ZeroDivisionError(ZERO_DIVISION_ERROR_MSG)
-    #     answer = firstNumber / secondNumber 
-    # elif math_operation == MathOperation.MULTIPLY:
-    #     answer = firstNumber * secondNumber
-    # elif math_operation == MathOperation.EXPONENTIATE:
-    #     answer = firstNumber ** secondNumber 
-    # return answer 
